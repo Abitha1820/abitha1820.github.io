@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Mail, Linkedin, Phone, Send } from "lucide-react";
+import { Mail, Linkedin, Phone, Send, MapPin, ArrowUpRight } from "lucide-react";
+
+const contactInfo = [
+  { icon: Mail, label: "Email", value: "deviabitha@gmail.com", href: "mailto:deviabitha@gmail.com" },
+  { icon: Linkedin, label: "LinkedIn", value: "LinkedIn Profile", href: "https://linkedin.com", external: true },
+  { icon: Phone, label: "Phone", value: "Available upon request", href: undefined },
+  { icon: MapPin, label: "Location", value: "Tamil Nadu, India", href: undefined },
+];
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -11,80 +18,93 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding">
-      <div className="max-w-7xl mx-auto">
-        <p className="text-primary font-semibold text-sm tracking-widest uppercase text-center mb-2">Contact</p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-12">
-          Let's Work Together
-        </h2>
+    <section id="contact" className="section-padding relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px]" />
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Info */}
-          <div>
-            <h3 className="font-display text-xl font-semibold mb-6">Get in Touch</h3>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-            </p>
-            <div className="space-y-4">
-              <a href="mailto:deviabitha@gmail.com" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Mail className="text-primary" size={18} />
-                </div>
-                deviabitha@gmail.com
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Linkedin className="text-primary" size={18} />
-                </div>
-                LinkedIn Profile
-              </a>
-              <div className="flex items-center gap-4 text-muted-foreground">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Phone className="text-primary" size={18} />
-                </div>
-                Available upon request
-              </div>
-            </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4">
+            <span className="text-primary font-medium text-sm">Contact</span>
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Let's Work <span className="text-gradient">Together</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            I'm always open to discussing new projects, creative ideas, or opportunities.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+          {/* Info side */}
+          <div className="md:col-span-2 space-y-4">
+            {contactInfo.map((item) => {
+              const Wrapper = item.href ? "a" : "div";
+              const linkProps = item.href
+                ? { href: item.href, ...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {}) }
+                : {};
+
+              return (
+                <Wrapper
+                  key={item.label}
+                  {...(linkProps as any)}
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all group"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 group-hover:bg-primary flex items-center justify-center transition-colors shrink-0">
+                    <item.icon className="text-primary group-hover:text-primary-foreground transition-colors" size={18} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-muted-foreground">{item.label}</p>
+                    <p className="text-sm font-medium truncate">{item.value}</p>
+                  </div>
+                  {item.href && (
+                    <ArrowUpRight size={14} className="text-muted-foreground ml-auto shrink-0 group-hover:text-primary transition-colors" />
+                  )}
+                </Wrapper>
+              );
+            })}
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label className="block text-sm font-medium mb-1.5">Name</label>
-              <input
-                type="text"
-                required
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1.5">Email</label>
-              <input
-                type="email"
-                required
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-                placeholder="your@email.com"
-              />
+          <form onSubmit={handleSubmit} className="md:col-span-3 bg-card rounded-2xl border border-border/50 p-6 md:p-8 space-y-5">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium mb-1.5">Name</label>
+                <input
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1.5">Email</label>
+                <input
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition"
+                  placeholder="your@email.com"
+                />
+              </div>
             </div>
             <div>
               <label className="block text-sm font-medium mb-1.5">Message</label>
               <textarea
                 required
-                rows={4}
+                rows={5}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none"
+                className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition resize-none"
                 placeholder="Tell me about your project..."
               />
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+              className="w-full px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Send Message <Send size={16} />
             </button>

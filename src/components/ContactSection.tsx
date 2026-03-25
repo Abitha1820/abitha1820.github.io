@@ -128,9 +128,16 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
+              disabled={sending}
+              className="w-full px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none"
             >
-              Send Message <Send size={16} />
+              {sending ? (
+                <><Loader2 size={16} className="animate-spin" /> Sending...</>
+              ) : sent ? (
+                <><CheckCircle size={16} /> Sent!</>
+              ) : (
+                <><Send size={16} /> Send Message</>
+              )}
             </button>
           </form>
         </div>

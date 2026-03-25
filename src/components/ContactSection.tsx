@@ -12,11 +12,33 @@ const contactInfo = [
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailto = `mailto:deviabitha@gmail.com?subject=Portfolio Contact from ${form.name}&body=${encodeURIComponent(form.message)}`;
-    window.open(mailto);
+    setSending(true);
+    try {
+      await emailjs.send(
+        "service_4p6pedo",
+        "template_vj1h2hd",
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        "wj899psQzH8PnxRPm"
+      );
+      setSent(true);
+      setForm({ name: "", email: "", message: "" });
+      toast({ title: "Message sent!", description: "I'll get back to you soon." });
+      setTimeout(() => setSent(false), 3000);
+    } catch {
+      toast({ title: "Failed to send", description: "Please try again or email directly.", variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (

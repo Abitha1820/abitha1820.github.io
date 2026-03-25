@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Mail, Linkedin, Phone, Send, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, Phone, Send, MapPin, ArrowUpRight, CheckCircle, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "deviabitha@gmail.com", href: "mailto:deviabitha@gmail.com" },

@@ -5,19 +5,19 @@ const cards = [
     icon: GraduationCap,
     title: "Education",
     highlight: "B.E. in ECE",
-    desc: "With a background in Electronics & Communication, I bridge the gap between technical complexity and real-world clarity, translating messy data into plain English.",
+    desc: "Anna University Regional Campus, Tirunelveli. Graduated in 2022 with a strong technical foundation in electronics and communication.",
   },
   {
     icon: Target,
-    title: "The \"Aha!\" Moment",
+    title: "Career Goal",
     highlight: "Data Analyst",
-    desc: "I live for the moment a clean dashboard reveals a business solution no one saw coming. I don't just visualize data — I make it useful.",
+    desc: "Aspiring to grow as a Data Analyst, leveraging analytical skills to derive meaningful insights and support data-driven decision making.",
   },
   {
     icon: Briefcase,
-    title: "Freelance Impact",
-    highlight: "5+ Projects",
-    desc: "In my first year of freelancing, I've delivered 5+ end-to-end projects using SQL, Python, and Power BI — building tools that save clients hours and uncover hidden growth opportunities.",
+    title: "Background",
+    highlight: "Freelancer",
+    desc: "A motivated freelancer exploring data analysis and technology. Focused on developing skills through hands-on projects and continuous learning.",
   },
 ];
 
@@ -40,11 +40,11 @@ const AboutSection = () => {
             <span className="text-primary font-medium text-sm">About Me</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Making Data{" "}
-            <span className="text-gradient">Actually Useful</span>
+            Designing Solutions,{" "}
+            <span className="text-gradient">Not Just Visuals</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A Data Analyst who goes beyond processing numbers — I build tools that save hours of manual effort and uncover hidden growth opportunities.
+            An ECE graduate transitioning into the world of data — combining technical knowledge with analytical thinking.
           </p>
         </div>
 

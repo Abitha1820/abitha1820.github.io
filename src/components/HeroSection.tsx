@@ -43,13 +43,14 @@ const HeroSection = () => {
 
           <p className="text-lg md:text-xl text-muted-foreground font-medium mb-3 flex items-center gap-2">
             <span className="inline-block w-8 h-[2px] bg-primary rounded-full" />
-            Aspiring Data Analyst & Freelancer
+            &nbsp;Freelance Data Analyst&nbsp;
           </p>
 
-          <p className="text-muted-foreground leading-relaxed mb-8 max-w-lg text-base">
-            An ECE graduate passionate about transforming raw data into actionable insights. 
-            Focused on analytics, dashboard creation, and building data-driven solutions.
-          </p>
+          <div className="text-muted-foreground leading-relaxed mb-8 max-w-2xl text-base whitespace-pre-line">
+            I’m a Data Analyst who lives for the "Aha!" moment—that point where a clean dashboard reveals a business solution no one saw coming. With a background in Electronics & Communication, I bridge the gap between technical complexity and real-world clarity, translating "messy" data into plain English.
+            {"\n\n"}
+            In my first year of freelancing, I’ve delivered 5+ end-to-end projects using SQL, Python, and Power BI. My work goes beyond just processing numbers; I build tools that save my clients hours of manual effort and uncover hidden growth opportunities. I don’t just visualize data—I make it useful.
+          </div>
 
           <div className="flex flex-wrap gap-3">
             <a

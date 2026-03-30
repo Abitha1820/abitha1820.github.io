@@ -5,7 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "deviabitha@gmail.com", href: "mailto:deviabitha@gmail.com" },
-  { icon: Linkedin, label: "LinkedIn", value: "LinkedIn Profile", href: "https://linkedin.com", external: true },
+  { icon: Linkedin, label: "LinkedIn", value: "Devi Abitha P T", href: "https://www.linkedin.com/in/devi-abitha-p-t/", external: true },
   { icon: Phone, label: "Phone", value: "Available upon request", href: undefined },
   { icon: MapPin, label: "Location", value: "Tamil Nadu, India", href: undefined },
 ];

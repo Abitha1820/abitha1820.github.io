@@ -5,19 +5,19 @@ const cards = [
     icon: GraduationCap,
     title: "Education",
     highlight: "B.E. in ECE",
-    desc: "Anna University Regional Campus, Tirunelveli. Graduated in 2022 with a strong technical foundation in electronics and communication.",
+    desc: "With a background in Electronics & Communication, I bridge the gap between technical complexity and real-world clarity, translating messy data into plain English.",
   },
   {
     icon: Target,
-    title: "Career Goal",
+    title: "The \"Aha!\" Moment",
     highlight: "Data Analyst",
-    desc: "Aspiring to grow as a Data Analyst, leveraging analytical skills to derive meaningful insights and support data-driven decision making.",
+    desc: "I live for the moment a clean dashboard reveals a business solution no one saw coming. I don't just visualize data — I make it useful.",
   },
   {
     icon: Briefcase,
-    title: "Background",
-    highlight: "Freelancer",
-    desc: "A motivated freelancer exploring data analysis and technology. Focused on developing skills through hands-on projects and continuous learning.",
+    title: "Freelance Impact",
+    highlight: "5+ Projects",
+    desc: "In my first year of freelancing, I've delivered 5+ end-to-end projects using SQL, Python, and Power BI — building tools that save clients hours and uncover hidden growth opportunities.",
   },
 ];
 
@@ -40,11 +40,11 @@ const AboutSection = () => {
             <span className="text-primary font-medium text-sm">About Me</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Designing Solutions,{" "}
-            <span className="text-gradient">Not Just Visuals</span>
+            Making Data{" "}
+            <span className="text-gradient">Actually Useful</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            An ECE graduate transitioning into the world of data — combining technical knowledge with analytical thinking.
+            A Data Analyst who goes beyond processing numbers — I build tools that save hours of manual effort and uncover hidden growth opportunities.
           </p>
         </div>
 

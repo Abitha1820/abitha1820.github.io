@@ -108,7 +108,7 @@ const ProjectsSection = () => {
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

@@ -12,7 +12,7 @@ const Footer = () => {
               Devi Abitha
             </a>
             <p className="text-sm text-muted-foreground mt-1">
-              Aspiring Data Analyst & Freelancer
+              Freelance Data Analyst
             </p>
           </div>
 

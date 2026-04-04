@@ -64,11 +64,14 @@ const ProjectsSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <div
+            <a
               key={p.title}
+              href={p.link || undefined}
+              target={p.link ? "_blank" : undefined}
+              rel={p.link ? "noopener noreferrer" : undefined}
               className={`group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 ${
                 i >= 3 ? "sm:col-span-1" : ""
-              }`}
+              } ${p.link ? "cursor-pointer" : "cursor-default"}`}
             >
               {/* Image */}
               <div className="relative overflow-hidden h-52">

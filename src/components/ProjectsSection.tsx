@@ -11,12 +11,14 @@ const projects = [
     desc: "Analyzed employee attrition patterns, workforce demographics, and HR metrics for talent retention insights.",
     tools: ["Power BI"],
     image: projectHr,
+    link: "",
   },
   {
     title: "Healthcare Analysis Dashboard",
     desc: "Explored healthcare data to identify trends in patient demographics, treatment outcomes, and resource utilization.",
     tools: ["Excel"],
     image: projectHealthcare,
+    link: "https://1drv.ms/x/c/723f1bcb48e8eed5/IQTc8oYcnc9bSpeAWylJ8U8OAXwo7jSnlfH-karBM8etPLI?em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edaebf=rslc0",
   },
   {
     title: "E-commerce Sales Insights",

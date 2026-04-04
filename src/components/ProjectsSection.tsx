@@ -25,18 +25,21 @@ const projects = [
     desc: "Uncovered revenue trends, product performance, and customer purchasing behavior from e-commerce data.",
     tools: ["Power BI"],
     image: projectEcommerce,
+    link: "",
   },
   {
     title: "Shawarma Shop Analysis",
     desc: "Freelance project analyzing sales data for a food business — order trends, revenue, and product popularity.",
     tools: ["Power BI", "Freelance"],
     image: projectShawarma,
+    link: "",
   },
   {
     title: "Dhatchan Academy Analysis",
     desc: "Comprehensive analysis of student performance, enrollment metrics, and course effectiveness.",
     tools: ["Power BI", "Excel"],
     image: projectAcademy,
+    link: "",
   },
 ];
 

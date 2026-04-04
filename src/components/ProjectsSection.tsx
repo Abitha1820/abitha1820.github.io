@@ -11,30 +11,35 @@ const projects = [
     desc: "Analyzed employee attrition patterns, workforce demographics, and HR metrics for talent retention insights.",
     tools: ["Power BI"],
     image: projectHr,
+    link: "",
   },
   {
     title: "Healthcare Analysis Dashboard",
     desc: "Explored healthcare data to identify trends in patient demographics, treatment outcomes, and resource utilization.",
     tools: ["Excel"],
     image: projectHealthcare,
+    link: "https://1drv.ms/x/c/723f1bcb48e8eed5/IQTc8oYcnc9bSpeAWylJ8U8OAXwo7jSnlfH-karBM8etPLI?em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edaebf=rslc0",
   },
   {
     title: "E-commerce Sales Insights",
     desc: "Uncovered revenue trends, product performance, and customer purchasing behavior from e-commerce data.",
     tools: ["Power BI"],
     image: projectEcommerce,
+    link: "",
   },
   {
     title: "Shawarma Shop Analysis",
     desc: "Freelance project analyzing sales data for a food business — order trends, revenue, and product popularity.",
     tools: ["Power BI", "Freelance"],
     image: projectShawarma,
+    link: "",
   },
   {
     title: "Dhatchan Academy Analysis",
     desc: "Comprehensive analysis of student performance, enrollment metrics, and course effectiveness.",
     tools: ["Power BI", "Excel"],
     image: projectAcademy,
+    link: "",
   },
 ];
 
@@ -59,11 +64,14 @@ const ProjectsSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <div
+            <a
               key={p.title}
+              href={p.link || undefined}
+              target={p.link ? "_blank" : undefined}
+              rel={p.link ? "noopener noreferrer" : undefined}
               className={`group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 ${
                 i >= 3 ? "sm:col-span-1" : ""
-              }`}
+              } ${p.link ? "cursor-pointer" : "cursor-default"}`}
             >
               {/* Image */}
               <div className="relative overflow-hidden h-52">
@@ -100,7 +108,7 @@ const ProjectsSection = () => {
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

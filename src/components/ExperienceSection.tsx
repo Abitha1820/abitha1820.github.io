@@ -2,8 +2,8 @@ import { Briefcase, Calendar, MapPin, CheckCircle2 } from "lucide-react";
 
 const milestones = [
   {
-    period: "2023 – Present",
-    title: "Data Analyst Trainee",
+    period: "2024 – Present",
+    title: "Freelance Data Analyst",
     location: "Freelance & Self-directed",
     items: [
       "Completed data analysis training with hands-on Kaggle projects",
@@ -12,10 +12,12 @@ const milestones = [
     ],
   },
   {
-    period: "2023",
+    period: "2024",
     title: "Freelance Projects",
     location: "Independent",
     items: [
+      "Healthcare Analysis – Patient demographics & treatment outcomes",
+      "HR Analytics – Employee attrition & workforce metrics",
       "Shawarma Shop Analysis – Sales data & revenue trends",
       "Dhatchan Academy Analysis – Student & course metrics",
     ],

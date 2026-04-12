@@ -79,7 +79,8 @@ const Navbar = () => {
             {dark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <a
-            href="#contact"
+            href="/DEVI_ABITHA_RESUME.pdf"
+            download
             className="px-5 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all flex items-center gap-2"
           >
             <Download size={14} /> Download CV
